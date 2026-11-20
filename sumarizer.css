@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f4f4f5;
+    background: linear-gradient(135deg, #171717, #25221e, #171717);
+    background-size: 200% 200%;
+    animation: backgroundShift 14s ease infinite;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 16px;
+    border-radius: 16px;
+    background: #b6c99b;
+    color: #202719;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #aaa7a1;
+    line-height: 1.6;
+}
+
+.input-card,
+.output-card {
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #3b3b36;
+    border-radius: 20px;
+    background: rgba(35, 35, 32, 0.92);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+label,
+h2 {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 16px;
+    resize: vertical;
+    border: 1px solid #494943;
+    border-radius: 12px;
+    outline: none;
+    background: #191917;
+    color: #f4f4f5;
+    font: inherit;
+    line-height: 1.6;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea::placeholder {
+    color: #777770;
+}
+
+textarea:focus {
+    border-color: #b6c99b;
+    box-shadow: 0 0 0 3px rgba(182, 201, 155, 0.12);
+}
+
+button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #b6c99b;
+    color: #202719;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    background: #c7d8ae;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+#output {
+    min-height: 100px;
+    padding: 16px;
+    border: 1px solid #3b3b36;
+    border-radius: 12px;
+    background: #191917;
+    color: #d8d8d2;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    .input-card,
+    .output-card {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
+
+    button {
+        transition: none;
+    }
+}
